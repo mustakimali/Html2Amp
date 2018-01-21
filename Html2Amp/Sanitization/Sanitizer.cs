@@ -1,5 +1,4 @@
 ﻿using AngleSharp.Dom;
-using ComboRox.Core.Utilities.SimpleGuard;
 
 namespace Html2Amp.Sanitization
 {
@@ -13,8 +12,6 @@ namespace Html2Amp.Sanitization
 
 		protected virtual void SetElementLayout(IElement element, IElement ampElement)
 		{
-			Guard.Requires(element, "element").IsNotNull();
-			Guard.Requires(ampElement, "ampElement").IsNotNull();
 
 			// https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#tldr-appendix-1-layout-table
 			if (element.Style != null && (element.Style.Display == "none" || element.Style.Visibility == "hidden"))

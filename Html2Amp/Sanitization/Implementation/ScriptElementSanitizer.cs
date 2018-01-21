@@ -1,5 +1,5 @@
-﻿using AngleSharp.Dom;
-using ComboRox.Core.Utilities.SimpleGuard;
+﻿using System;
+using AngleSharp.Dom;
 
 namespace Html2Amp.Sanitization.Implementation
 {
@@ -12,9 +12,9 @@ namespace Html2Amp.Sanitization.Implementation
 
 		public override IElement Sanitize(IDocument document, IElement htmlElement)
 		{
-			Guard.Requires(htmlElement, "htmlElement").IsNotNull();
+		    if (htmlElement == null) throw new ArgumentException("", nameof(htmlElement));
 
-			htmlElement.Parent.RemoveChild(htmlElement);
+            htmlElement.Parent.RemoveChild(htmlElement);
 
 			return null;
 		}

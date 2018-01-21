@@ -1,31 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Html2Amp", "Html2Amp\Html2Amp.csproj", "{12E46B6F-9522-4E02-87AF-C34173D5F2B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Html2Amp", "Html2Amp\Html2Amp.csproj", "{E952387E-5B19-41C0-8615-FFCF249A894D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Html2Amp.UnitTests", "Html2Amp.UnitTests\Html2Amp.UnitTests.csproj", "{900F293C-95E1-44FE-8366-45F7C392969F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Html2Amp.UnitTests", "Html2Amp.UnitTests\Html2Amp.UnitTests.csproj", "{10911633-6F67-4CCA-B6D8-D9689EF1B8C1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9123D9E6-9EBE-4E54-BC35-8232D28D34A6}"
-	ProjectSection(SolutionItems) = preProject
-		CopyTestDataToBin.targets = CopyTestDataToBin.targets
-		Readme.md = Readme.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Referenced assemblies", "Referenced assemblies", "{8656A4F6-C5F1-4DBC-8439-4532CF02E5CC}"
-	ProjectSection(SolutionItems) = preProject
-		Referenced Assemblies\DotNetGuard.dll = Referenced Assemblies\DotNetGuard.dll
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Html2Amp.PerfTests", "Html2Amp.PerfTests\Html2Amp.PerfTests.csproj", "{F51F1FF2-5FD2-4061-AA7D-34DFDA80CC70}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Html2Amp.IntegrationTests", "Html2Amp.IntegrationTests\Html2Amp.IntegrationTests.csproj", "{DA3CB128-561B-41CC-ABEF-519324A7FFF8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B5C7C1FE-9722-4FA3-BF9B-0AF46367B464}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Html2Amp.PerfTests", "Html2Amp.PerfTests\Html2Amp.PerfTests.csproj", "{4DCB1D14-7875-4C50-920D-EACE85F03F2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,24 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{12E46B6F-9522-4E02-87AF-C34173D5F2B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12E46B6F-9522-4E02-87AF-C34173D5F2B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12E46B6F-9522-4E02-87AF-C34173D5F2B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12E46B6F-9522-4E02-87AF-C34173D5F2B6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{900F293C-95E1-44FE-8366-45F7C392969F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{900F293C-95E1-44FE-8366-45F7C392969F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{900F293C-95E1-44FE-8366-45F7C392969F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{900F293C-95E1-44FE-8366-45F7C392969F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F51F1FF2-5FD2-4061-AA7D-34DFDA80CC70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F51F1FF2-5FD2-4061-AA7D-34DFDA80CC70}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F51F1FF2-5FD2-4061-AA7D-34DFDA80CC70}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F51F1FF2-5FD2-4061-AA7D-34DFDA80CC70}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DA3CB128-561B-41CC-ABEF-519324A7FFF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA3CB128-561B-41CC-ABEF-519324A7FFF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA3CB128-561B-41CC-ABEF-519324A7FFF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA3CB128-561B-41CC-ABEF-519324A7FFF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E952387E-5B19-41C0-8615-FFCF249A894D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E952387E-5B19-41C0-8615-FFCF249A894D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E952387E-5B19-41C0-8615-FFCF249A894D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E952387E-5B19-41C0-8615-FFCF249A894D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10911633-6F67-4CCA-B6D8-D9689EF1B8C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10911633-6F67-4CCA-B6D8-D9689EF1B8C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10911633-6F67-4CCA-B6D8-D9689EF1B8C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10911633-6F67-4CCA-B6D8-D9689EF1B8C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DCB1D14-7875-4C50-920D-EACE85F03F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DCB1D14-7875-4C50-920D-EACE85F03F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DCB1D14-7875-4C50-920D-EACE85F03F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DCB1D14-7875-4C50-920D-EACE85F03F2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {822F5849-97D5-443E-A5E5-A4EBF22C4591}
 	EndGlobalSection
 EndGlobal

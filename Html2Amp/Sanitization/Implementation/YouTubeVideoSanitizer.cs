@@ -1,6 +1,5 @@
 ﻿using AngleSharp.Dom;
 using AngleSharp.Dom.Html;
-using ComboRox.Core.Utilities.SimpleGuard;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -36,9 +35,9 @@ namespace Html2Amp.Sanitization.Implementation
 
         public override IElement Sanitize(IDocument document, IElement htmlElement)
         {
-            Guard.Requires(document, "document").IsNotNull();
-            Guard.Requires(htmlElement, "htmlElement").IsNotNull();
-
+            if (document == null) throw new ArgumentException("", nameof(document));
+            if (htmlElement == null) throw new ArgumentException("", nameof(htmlElement));
+            
             var ampElement = document.CreateElement("amp-youtube");
 
 			htmlElement.CopyAttributes(ampElement, this.AllowedAttribtes);
@@ -59,8 +58,8 @@ namespace Html2Amp.Sanitization.Implementation
 
         protected virtual void SetVideoParams(IElement ampElement, NameValueCollection videoParams)
         {
-            Guard.Requires(ampElement, "ampElement").IsNotNull();
-            Guard.Requires(videoParams, "videoParams").IsNotNull();
+            
+            
 
             foreach (var paramName in videoParams.AllKeys)
             {
@@ -71,7 +70,7 @@ namespace Html2Amp.Sanitization.Implementation
 
         protected virtual string GetVideoId(Uri videoUri)
         {
-            Guard.Requires(videoUri, "videoUri").IsNotNull();
+            
 
             var videoIdMatch = Regex.Match(videoUri.LocalPath, VideoIdRegex);
 

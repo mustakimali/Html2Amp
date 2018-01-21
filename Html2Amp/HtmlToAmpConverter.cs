@@ -2,7 +2,6 @@
 using AngleSharp.Dom;
 using AngleSharp.Dom.Html;
 using AngleSharp.Parser.Html;
-using ComboRox.Core.Utilities.SimpleGuard;
 using Html2Amp.Sanitization;
 using Html2Amp.Sanitization.Implementation;
 using System.Collections.Generic;
@@ -88,8 +87,6 @@ namespace Html2Amp
 		/// <returns>Returns <see cref="ConvertionResult"/> which contains the result of the convertion.</returns>
 		public ConvertionResult ConvertFromHtml(string htmlSource)
 		{
-			Guard.Requires(htmlSource, "htmlSource").IsNotNullOrEmpty();
-
 			IHtmlDocument document = parser.Parse(htmlSource);
 			IHtmlHtmlElement htmlElement = (IHtmlHtmlElement)document.DocumentElement;
 

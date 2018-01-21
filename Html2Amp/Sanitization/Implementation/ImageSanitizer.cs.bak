@@ -19,7 +19,7 @@ namespace Html2Amp.Sanitization.Implementation
 
 		public override IElement Sanitize(IDocument document, IElement htmlElement)
 		{
-			Guard.Requires(htmlElement, "htmlElement").IsNotNull();
+			
 
 			return this.SanitizeCore<IHtmlImageElement>(document, htmlElement, this.GetAmpElementTag(htmlElement));
 		}
@@ -50,7 +50,7 @@ namespace Html2Amp.Sanitization.Implementation
 
 		protected virtual void SetImageSize(IElement htmlElement)
 		{
-			Guard.Requires(htmlElement, "htmlElement").IsNotNull();
+			
 
 			if (!htmlElement.HasAttribute("src"))
 			{
@@ -98,7 +98,7 @@ namespace Html2Amp.Sanitization.Implementation
 
 		protected virtual Image DownloadImage(string imageUrl)
 		{
-			Guard.Requires(imageUrl, "imageUrl").IsNotNullOrEmpty();
+			
 
 			Image image;
 

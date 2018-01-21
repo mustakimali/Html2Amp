@@ -13,12 +13,16 @@ namespace Html2Amp.UnitTests.Accessors
 	{
 		public new void SetVideoParams(IElement ampElement, NameValueCollection videoParams)
 		{
-			base.SetVideoParams(ampElement, videoParams);
+		    if (ampElement == null) throw new ArgumentException("", nameof(ampElement));
+		    if (videoParams == null) throw new ArgumentException("", nameof(videoParams));
+
+            base.SetVideoParams(ampElement, videoParams);
 		}
 
 		public new string GetVideoId(Uri videoUri)
 		{
-			return base.GetVideoId(videoUri);
+		    if (videoUri == null) throw new ArgumentException("", nameof(videoUri));
+            return base.GetVideoId(videoUri);
 		}
 	}
 }

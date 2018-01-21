@@ -1,6 +1,5 @@
 ﻿using AngleSharp.Dom;
 using AngleSharp.Dom.Html;
-using ComboRox.Core.Utilities.SimpleGuard;
 using System;
 using System.Text;
 
@@ -17,8 +16,8 @@ namespace Html2Amp.Sanitization.Implementation
 
 		public override IElement Sanitize(IDocument document, IElement htmlElement)
 		{
-            Guard.Requires(document, "document").IsNotNull();
-            Guard.Requires(htmlElement, "htmlElement").IsNotNull();
+		    if (document == null) throw new ArgumentException("", nameof(document));
+		    if (htmlElement == null) throw new ArgumentException("", nameof(htmlElement));
 
             return this.SanitizeCore<IHtmlInlineFrameElement>(document, htmlElement, "amp-iframe");
 		}

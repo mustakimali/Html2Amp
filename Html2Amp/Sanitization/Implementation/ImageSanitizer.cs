@@ -1,6 +1,5 @@
 ﻿using AngleSharp.Dom;
 using AngleSharp.Dom.Html;
-using ComboRox.Core.Utilities.SimpleGuard;
 using Html2Amp.Models;
 using Html2Amp.Web;
 using System;
@@ -19,9 +18,9 @@ namespace Html2Amp.Sanitization.Implementation
 
 		public override IElement Sanitize(IDocument document, IElement htmlElement)
 		{
-			Guard.Requires(htmlElement, "htmlElement").IsNotNull();
-
-			return this.SanitizeCore<IHtmlImageElement>(document, htmlElement, this.GetAmpElementTag(htmlElement));
+		    if (document == null) throw new ArgumentException("", nameof(document));
+		    if (htmlElement == null) throw new ArgumentException("", nameof(htmlElement));
+            return this.SanitizeCore<IHtmlImageElement>(document, htmlElement, this.GetAmpElementTag(htmlElement));
 		}
 
 		private string GetAmpElementTag(IElement imageElement)
@@ -50,8 +49,6 @@ namespace Html2Amp.Sanitization.Implementation
 
 		protected virtual void SetImageSize(IElement htmlElement)
 		{
-			Guard.Requires(htmlElement, "htmlElement").IsNotNull();
-
 			if (!htmlElement.HasAttribute("src"))
 			{
 				return;
@@ -96,8 +93,6 @@ namespace Html2Amp.Sanitization.Implementation
 
 		protected virtual Image DownloadImage(string imageUrl)
 		{
-			Guard.Requires(imageUrl, "imageUrl").IsNotNullOrEmpty();
-
 			Image image;
 
 			using (var webClient = new WebClient())

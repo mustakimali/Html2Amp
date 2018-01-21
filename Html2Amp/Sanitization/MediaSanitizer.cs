@@ -1,5 +1,4 @@
 ﻿using AngleSharp.Dom;
-using ComboRox.Core.Utilities.SimpleGuard;
 using System;
 using System.Text;
 
@@ -17,9 +16,6 @@ namespace Html2Amp.Sanitization
 
 		protected virtual void SetMediaElementLayout(IElement element, IElement ampElement)
 		{
-			Guard.Requires(element, "element").IsNotNull();
-			Guard.Requires(ampElement, "ampElement").IsNotNull();
-
 			if (!ampElement.HasAttribute("layout"))
 			{
 				if (element.HasAttribute("height"))
@@ -74,9 +70,9 @@ namespace Html2Amp.Sanitization
 		protected virtual IElement SanitizeCore<T>(IDocument document, IElement htmlElement, string ampElementTagName)
 			where T : IElement
 		{
-			Guard.Requires(document, "document").IsNotNull();
-			Guard.Requires(htmlElement, "htmlElement").IsNotNull();
-			Guard.Requires(ampElementTagName, "ampElementTagName").IsNotNullOrEmpty();
+			
+			
+			
 
 			var element = (T)htmlElement;
 

@@ -1,5 +1,5 @@
-﻿using AngleSharp.Dom;
-using ComboRox.Core.Utilities.SimpleGuard;
+﻿using System;
+using AngleSharp.Dom;
 using System.Linq;
 
 namespace Html2Amp.Sanitization.Implementation
@@ -9,13 +9,13 @@ namespace Html2Amp.Sanitization.Implementation
         public override bool CanSanitize(IElement element)
         {
             return element != null
-                && element.Attributes.Any(a => a.Name.StartsWith("on") 
+                && element.Attributes.Any(a => a.Name.StartsWith("on")
                     && a.Name.Length > 2);
         }
 
         public override IElement Sanitize(IDocument document, IElement htmlElement)
         {
-            Guard.Requires(htmlElement, "htmlElement").IsNotNull();
+            if (htmlElement == null) throw new ArgumentException("", nameof(htmlElement));
 
             var javascriptAttributes = htmlElement.Attributes
                 .Where(a => a.Name.StartsWith("on") && a.Name.Length > 2)

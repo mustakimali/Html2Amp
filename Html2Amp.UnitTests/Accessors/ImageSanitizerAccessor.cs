@@ -12,7 +12,9 @@ namespace Html2Amp.UnitTests.Accessors
 	{
 		public new Image DownloadImage(string imageUrl)
 		{
-			return base.DownloadImage(imageUrl);
+		    if (string.IsNullOrEmpty(imageUrl)) throw new ArgumentException("", nameof(imageUrl));
+		    
+            return base.DownloadImage(imageUrl);
 		}
 	}
 }
